@@ -50,6 +50,7 @@ import android.text.format.DateUtils;
 import android.text.style.RelativeSizeSpan;
 import android.util.Log;
 import android.widget.Toast;
+import android.provider.Settings;
 
 import com.android.internal.telephony.Call;
 import com.android.internal.telephony.CallManager;
@@ -581,12 +582,22 @@ public class NotificationMgr {
         mMissedCalls.add(0, new MissedCallInfo(callName, number, date));
 
         Notification.Builder builder = new Notification.Builder(mContext);
-        builder.setSmallIcon(android.R.drawable.stat_notify_missed_call)
+        if (Settings.System.getInt(mContext.getContentResolver(),
+               Settings.System.KEY_MISSED_CALL_BREATH, 0) == 1) {
+             builder.setSmallIcon(R.drawable.stat_notify_missed_call_breath)
                 .setTicker(mContext.getString(R.string.notification_missedCallTicker, callName))
                 .setWhen(date)
                 .setContentIntent(pendingCallLogIntent)
                 .setAutoCancel(true)
                 .setDeleteIntent(createClearMissedCallsIntent());
+           } else {
+             builder.setSmallIcon(android.R.drawable.stat_notify_missed_call)
+                .setTicker(mContext.getString(R.string.notification_missedCallTicker, callName))
+                .setWhen(date)
+                .setContentIntent(pendingCallLogIntent)
+                .setAutoCancel(true)
+                .setDeleteIntent(createClearMissedCallsIntent());
+        }
 
         // display the first line of the notification:
         // 1 missed call: call name
