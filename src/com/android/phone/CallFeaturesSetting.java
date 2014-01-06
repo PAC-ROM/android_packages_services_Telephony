@@ -56,12 +56,8 @@ import android.preference.PreferenceScreen;
 import android.provider.ContactsContract.CommonDataKinds;
 import android.provider.MediaStore;
 import android.provider.Settings;
-import android.provider.Settings.SettingNotFoundException;
 import android.telephony.PhoneNumberUtils;
-import android.text.Spannable;
-import android.text.SpannableString;
 import android.text.TextUtils;
-import android.text.style.TypefaceSpan;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.WindowManager;
@@ -341,6 +337,7 @@ public class CallFeaturesSetting extends PreferenceActivity
     private ListPreference mT9SearchInputLocale;
     private CheckBoxPreference mNonIntrusiveInCall;
     private CheckBoxPreference mCallEndSound;
+    private ListPreference mFlipAction;
 
     private class VoiceMailProvider {
         public VoiceMailProvider(String name, Intent intent) {
@@ -360,6 +357,7 @@ public class CallFeaturesSetting extends PreferenceActivity
         CommandsInterface.CF_REASON_NO_REPLY,
         CommandsInterface.CF_REASON_NOT_REACHABLE
     };
+    private static final CharSequence FLIP_ACTION_KEY = "flip_action";
 
     private class VoiceMailProviderSettings {
         /**
@@ -691,9 +689,21 @@ public class CallFeaturesSetting extends PreferenceActivity
             saveLookupProviderSetting(preference, (String) objValue);
         } else if (preference == mT9SearchInputLocale) {
             saveT9SearchInputLocale(preference, (String) objValue);
+        }else if (preference == mFlipAction) {
+            updateFlipActionSummary((String) objValue);
         }
         // always let the preference setting proceed.
         return true;
+    }
+
+    private void updateFlipActionSummary(String action) {
+        int i = Integer.parseInt(action);
+        if (mFlipAction != null) {
+            String[] summaries = getResources().getStringArray(R.array.flip_action_summary_entries);
+            mFlipAction.setSummary(getString(R.string.flip_action_summary, summaries[i]));
+            Settings.System.putInt(getContentResolver(), Settings.System.FLIP_ACTION_KEY,
+                    i);
+        }
     }
 
     @Override
@@ -1669,6 +1679,8 @@ public class CallFeaturesSetting extends PreferenceActivity
             initT9SearchInputPreferenceList();
         }
 
+        mFlipAction = (ListPreference) findPreference(FLIP_ACTION_KEY);
+
         if (mVibrateWhenRinging != null) {
             Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
             if (vibrator != null && vibrator.hasVibrator()) {
@@ -1735,6 +1747,13 @@ public class CallFeaturesSetting extends PreferenceActivity
         if (mT9SearchInputLocale != null) {
             // should this be enabled/disabled based on a flag?
             mT9SearchInputLocale.setOnPreferenceChangeListener(this);
+        }
+
+        if (mFlipAction != null) {
+            mFlipAction.setOnPreferenceChangeListener(this);
+            int flipAction = Settings.System.getInt(getContentResolver(),
+                    Settings.System.FLIP_ACTION_KEY, 0);
+            mFlipAction.setDefaultValue(String.valueOf(flipAction));
         }
 
         if (!getResources().getBoolean(R.bool.world_phone)) {
@@ -2020,6 +2039,10 @@ public class CallFeaturesSetting extends PreferenceActivity
         if (migrateVoicemailVibrationSettingsIfNeeded(prefs)) {
             mVoicemailNotificationVibrate.setChecked(prefs.getBoolean(
                     BUTTON_VOICEMAIL_NOTIFICATION_VIBRATE_KEY, false));
+        }
+
+        if (mFlipAction != null) {
+            updateFlipActionSummary(mFlipAction.getValue());
         }
 
         lookupRingtoneName();
