@@ -16,7 +16,31 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <string name="preference_category_interface">Interface</string>
+    <string name="non_intrusive_incall_title">Non intrusive</string>
+    <string name="non_intrusive_incall_summary">Use non intrusive dialog for incoming calls</string>
+
+    <!-- Setting title for the flip action setting. -->
+    <string name="flip_action_title">Flip action</string>
+
+    <!-- Dialog title of the flip action setting. -->
+    <string name="flip_action_dialog_title">Flip device to\u2026</string>
+
+    <!-- Setting summary for the flip action setting. -->
+    <string name="flip_action_summary">Flipping the phone down will <xliff:g id="action">%s</xliff:g></string>
+
+    <!-- Values for flip action array entries -->
+    <string name="entry_do_nothing">Do nothing</string>
+    <string name="entry_mute_ringer">Mute ringer</string>
+    <string name="entry_dismiss_call">Dismiss call</string>
+    <string name="summary_do_nothing">do nothing</string>
+    <string name="summary_mute_ringer">mute the ringer</string>
+    <string name="summary_dismiss_call">dismiss the call</string>
+
+    <string name="personal_category">Personal settings</string>
+
     <string name="battery_mode">Battery saving mode</string>
     <!-- Mobile network settings screen, setting summary text when check box is selected -->
     <string name="battery_mode_label">Set network to 2G when device is locked</string>
+
 </resources>
