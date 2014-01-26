@@ -106,6 +106,20 @@
         android:title="@string/other_settings"
         android:persistent="false" />
 
+    <CheckBoxPreference
+          android:key="button_enable_suggestions"
+          android:title="@string/enable_suggestions_title"
+          android:summary="@string/enable_suggestions_summary"
+          android:defaultValue="true"
+          android:persistent="false" />
+
+    <CheckBoxPreference
+          android:key="button_enable_reverse_lookup"
+          android:title="@string/enable_reverse_lookup_title"
+          android:summary="@string/enable_reverse_lookup_summary"
+          android:defaultValue="true"
+          android:persistent="false" />
+
     <PreferenceScreen
         android:key="button_fdn_key"
         android:title="@string/fdn"

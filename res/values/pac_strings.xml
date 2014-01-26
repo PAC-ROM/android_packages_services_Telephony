@@ -43,4 +43,10 @@
     <!-- Mobile network settings screen, setting summary text when check box is selected -->
     <string name="battery_mode_label">Set network to 2G when device is locked</string>
 
+    <!-- Integrated phone directory -->
+    <string name="enable_suggestions_title">Enable suggestions</string>
+    <string name="enable_suggestions_summary">Suggest phone number of nearby places when searching in the dialer</string>
+    <string name="enable_reverse_lookup_title">Enable reverse lookup</string>
+    <string name="enable_reverse_lookup_summary">Look up names on incoming calls when number is not in phone book</string>
+
 </resources>
