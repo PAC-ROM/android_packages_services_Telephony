@@ -31,6 +31,7 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.Process;
 import android.os.ServiceManager;
+import android.provider.Settings;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.telephony.NeighboringCellInfo;
@@ -69,6 +70,8 @@ public class PhoneInterfaceManager extends ITelephony.Stub {
     private static final int CMD_SILENCE_RINGER = 6;
     private static final int MESSAGE_GET_PREFERRED_NETWORK_TYPE = 7;
     private static final int MESSAGE_SET_PREFERRED_NETWORK_TYPE = 8;
+    private static final int CMD_TOGGLE_LTE = 9; // not used yet
+    private static final int CMD_TOGGLE_2G = 10; // used in screen action implementation
 
     /** The singleton instance. */
     private static PhoneInterfaceManager sInstance;
@@ -355,6 +358,20 @@ public class PhoneInterfaceManager extends ITelephony.Stub {
 	mPhone.setPreferredNetworkType(network, mMainThreadHandler
                         .obtainMessage(MESSAGE_SET_PREFERRED_NETWORK_TYPE));
         return;
+    }
+
+    // Used in Screen action implementation
+    public void toggle2G(boolean on) {
+        int network = -1;
+        if (on) {
+            network = PhoneConstants.NT_MODE_GSM_ONLY;
+        } else {
+            network = PhoneConstants.NT_MODE_WCDMA_PREF;
+        }
+        mPhone.setPreferredNetworkType(network,
+                mMainThreadHandler.obtainMessage(CMD_TOGGLE_2G));
+        Settings.Secure.putInt(mApp.getContentResolver(),
+                Settings.Global.PREFERRED_NETWORK_MODE, network);
     }
 
     private boolean showCallScreenInternal(boolean specifyInitialDialpadState,
