@@ -48,6 +48,14 @@
         <item>OpenStreetMap</item>
     </string-array>
 
+    <string-array name="people_lookup_providers" translatable="false">
+        <item>WhitePages</item>
+    </string-array>
+
+    <string-array name="people_lookup_provider_names" translatable="false">
+        <item>WhitePages (US)</item>
+    </string-array>
+
     <string-array translatable="false" name="reverse_lookup_providers">
         <item>OpenCnam</item>
         <item>WhitePages</item>
