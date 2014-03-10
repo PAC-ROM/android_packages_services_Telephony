@@ -18,9 +18,12 @@
      for different hardware or product builds. -->
 <resources>
     <!-- Flag indicating whether the Phone app should ignore
-         EVENT_SIM_NETWORK_LOCKED events from the Sim.  If true, this will
-         prevent the IccNetworkDepersonalizationPanel from being shown,
-         and effectively disable the "Sim network lock" feature. -->
+         EVENT_SIM_PERSO_LOCKED events from the Sim.  If true, this will
+         prevent the IccDepersonalizationPanel from being shown,
+         and effectively disable the "Sim perso unlock" feature. -->
+    <bool name="ignore_perso_locked_events">false</bool>
+    <!-- For compatibility with Google's configuration files, it
+         is used in exactly the same way as the above -->
     <bool name="ignore_sim_network_locked_events">false</bool>
 
     <!-- Flag indicating whether the Phone app should provide
