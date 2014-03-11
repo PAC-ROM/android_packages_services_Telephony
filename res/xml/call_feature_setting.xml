@@ -265,17 +265,17 @@
           />
     </PreferenceScreen>
 
-    <PreferenceScreen
+    <PreferenceCategory
         android:key="preference_category_interface_key"
         android:title="@string/preference_category_interface"
         android:persistent="false">
-    </PreferenceScreen>
 
-    <CheckBoxPreference
-        android:key="button_non_intrusive_incall"
-        android:title="@string/non_intrusive_incall_title"
-        android:summary="@string/non_intrusive_incall_summary"
-        android:persistent="false"
-        android:defaultValue="true" />
+        <CheckBoxPreference
+            android:key="button_non_intrusive_incall"
+            android:title="@string/non_intrusive_incall_title"
+            android:summary="@string/non_intrusive_incall_summary"
+            android:persistent="false"
+            android:defaultValue="true" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
