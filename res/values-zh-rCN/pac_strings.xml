@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2013 ParanoidAndroid Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="preference_category_interface">界面</string>
+    <string name="non_intrusive_incall_title">非侵入式</string>
+    <string name="non_intrusive_incall_summary">对来电使用非侵入式对话框</string>
+
+    <!-- Setting title for the flip action setting. -->
+    <string name="flip_action_title">翻转行为</string>
+
+    <!-- Dialog title of the flip action setting. -->
+    <string name="flip_action_dialog_title">翻转设备将\u2026</string>
+
+    <!-- Setting summary for the flip action setting. -->
+    <string name="flip_action_summary">翻转设备将<xliff:g id="action">%s</xliff:g></string>
+
+    <!-- Values for flip action array entries -->
+    <string name="entry_do_nothing">不产生任何作用</string>
+    <string name="entry_mute_ringer">铃声静音</string>
+    <string name="entry_dismiss_call">拒绝呼叫</string>
+    <string name="summary_do_nothing">不产生任何作用</string>
+    <string name="summary_mute_ringer">铃声静音</string>
+    <string name="summary_dismiss_call">拒绝呼叫</string>
+
+    <string name="personal_category">个人设置</string>
+
+    <string name="battery_mode">节电模式</string>
+    <!-- Mobile network settings screen, setting summary text when check box is selected -->
+    <string name="battery_mode_label">设备锁定时将网络设为 2G</string>
+
+    <!-- Call UI in background -->
+    <string name="bg_incall">后台来电</string>
+    <string name="bg_incall_summary">屏幕开启时保持来电界面在后台，只显示通知和播放铃声。需要禁用非侵入式来电。</string>
+
+</resources>
