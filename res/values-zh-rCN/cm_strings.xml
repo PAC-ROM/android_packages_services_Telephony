@@ -32,14 +32,6 @@
     <string name="incall_vibration">来电震动</string>
     <string name="vibrate_outgoing">对方接听时震动</string>
     <string name="vibrate_call_waiting">呼叫等待时震动</string>
-    <string name="vibrate_hangup">挂断时震动</string>
-    <string name="vibrate_45">每分钟震动</string>
-    <string name="vibrate_45_sum">呼出通话达到每分钟的 45 秒时震动</string>
-    <string name="show_ssn_label">事件提醒</string>
-    <string name="show_ssn_summary">为通话处理相关的各种网络事件显示一个通知</string>
-    <string name="incall_vibration">来电震动</string>
-    <string name="vibrate_outgoing">对方接听时震动</string>
-    <string name="vibrate_call_waiting">呼叫等待时震动</string>
     <string name="vibrate_hangup">通话结束时震动</string>
     <string name="vibrate_45">每分钟震动</string>
     <string name="vibrate_45_sum">呼出通话达到每分钟的 45 秒时震动</string>
