@@ -61,12 +61,12 @@
     <string name="number_lookup">电话号码查询</string>
     <string name="enable_forward_lookup_title">正向查询</string>
     <string name="enable_forward_lookup_summary">在拨号器搜索时显示附近地点</string>
-    <string name="enable_people_lookup_title">人脉查询</string>
-    <string name="enable_people_lookup_summary">在拨号器搜索时显示人脉在线结果</string>
+    <string name="enable_people_lookup_title">人名查询</string>
+    <string name="enable_people_lookup_summary">在拨号器搜索时显示人名在线结果</string>
     <string name="enable_reverse_lookup_title">反向查询</string>
     <string name="enable_reverse_lookup_summary">为未知来电号码查询人或地点信息</string>
     <string name="choose_lookup_providers">选择查询提供商</string>
     <string name="choose_forward_lookup_provider_title">选择正向查询提供商</string>
-    <string name="choose_people_lookup_provider_title">选择人脉查询提供商</string>
+    <string name="choose_people_lookup_provider_title">选择人名查询提供商</string>
     <string name="choose_reverse_lookup_provider_title">选择反向查询提供商</string>
 </resources>
