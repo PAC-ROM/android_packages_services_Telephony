@@ -327,7 +327,7 @@ public class PhoneInterfaceManager extends ITelephony.Stub {
 	return lte;
     }
 
-    public void toggleLTE() {
+    public void toggleLTE(boolean on) {
         int network = getPreferredNetworkMode();
         switch (network) {
 	    case Phone.NT_MODE_WCDMA_PREF:
