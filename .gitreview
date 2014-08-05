@@ -1,0 +1,5 @@
+[gerrit]
+host=review.pac-rom.com
+port=29418
+project=android_packages_services_Telephony.git
+defaultbranch=pac-4.4
