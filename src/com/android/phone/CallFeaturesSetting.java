@@ -293,6 +293,9 @@ public class CallFeaturesSetting extends PreferenceActivity
     // Blacklist support
     private static final String BUTTON_BLACKLIST = "button_blacklist";
 
+    // Flip Action
+    private static final String FLIP_ACTION_KEY = "flip_action";
+
     private EditPhoneNumberPreference mSubMenuVoicemailSettings;
 
     private Runnable mRingtoneLookupRunnable;
@@ -357,7 +360,6 @@ public class CallFeaturesSetting extends PreferenceActivity
         CommandsInterface.CF_REASON_NO_REPLY,
         CommandsInterface.CF_REASON_NOT_REACHABLE
     };
-    private static final CharSequence FLIP_ACTION_KEY = "flip_action";
 
     private class VoiceMailProviderSettings {
         /**
@@ -690,19 +692,19 @@ public class CallFeaturesSetting extends PreferenceActivity
         } else if (preference == mT9SearchInputLocale) {
             saveT9SearchInputLocale(preference, (String) objValue);
         }else if (preference == mFlipAction) {
-            updateFlipActionSummary((String) objValue);
+            int index = mFlipAction.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.FLIP_ACTION_KEY, index);
+            updateFlipActionSummary(index);
         }
         // always let the preference setting proceed.
         return true;
     }
 
-    private void updateFlipActionSummary(String action) {
-        int i = Integer.parseInt(action);
+    private void updateFlipActionSummary(int value) {
         if (mFlipAction != null) {
             String[] summaries = getResources().getStringArray(R.array.flip_action_summary_entries);
-            mFlipAction.setSummary(getString(R.string.flip_action_summary, summaries[i]));
-            Settings.System.putInt(getContentResolver(), Settings.System.FLIP_ACTION_KEY,
-                    i);
+            mFlipAction.setSummary(getString(R.string.flip_action_summary, summaries[value]));
         }
     }
 
@@ -1664,6 +1666,7 @@ public class CallFeaturesSetting extends PreferenceActivity
         mButtonBlacklist = (PreferenceScreen) findPreference(BUTTON_BLACKLIST);
         mT9SearchInputLocale = (ListPreference) findPreference(BUTTON_T9_SEARCH_INPUT_LOCALE);
         mIncomingCallStyle = (ListPreference) findPreference(BUTTON_INCOMING_CALL_STYLE);
+        mFlipAction = (ListPreference) findPreference(FLIP_ACTION_KEY);
 
         if (mVoicemailProviders != null) {
             mVoicemailProviders.setOnPreferenceChangeListener(this);
@@ -1678,8 +1681,6 @@ public class CallFeaturesSetting extends PreferenceActivity
         if (mT9SearchInputLocale != null) {
             initT9SearchInputPreferenceList();
         }
-
-        mFlipAction = (ListPreference) findPreference(FLIP_ACTION_KEY);
 
         if (mVibrateWhenRinging != null) {
             Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -1751,9 +1752,6 @@ public class CallFeaturesSetting extends PreferenceActivity
 
         if (mFlipAction != null) {
             mFlipAction.setOnPreferenceChangeListener(this);
-            int flipAction = Settings.System.getInt(getContentResolver(),
-                    Settings.System.FLIP_ACTION_KEY, 0);
-            mFlipAction.setDefaultValue(String.valueOf(flipAction));
         }
 
         if (!getResources().getBoolean(R.bool.world_phone)) {
@@ -2042,7 +2040,10 @@ public class CallFeaturesSetting extends PreferenceActivity
         }
 
         if (mFlipAction != null) {
-            updateFlipActionSummary(mFlipAction.getValue());
+            int flipAction = Settings.System.getInt(getContentResolver(),
+                    Settings.System.FLIP_ACTION_KEY, 2);
+            mFlipAction.setValue(String.valueOf(flipAction));
+            updateFlipActionSummary(flipAction);
         }
 
         lookupRingtoneName();
