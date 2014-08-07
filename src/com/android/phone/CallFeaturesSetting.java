@@ -607,11 +607,11 @@ public class CallFeaturesSetting extends PreferenceActivity
                 return false;
             }
         } else if (preference == mNonIntrusiveInCall){
-            Settings.System.putInt(getContentResolver(), Settings.System.NON_INTRUSIVE_INCALL,
+            Settings.PAC.putInt(getContentResolver(), Settings.PAC.NON_INTRUSIVE_INCALL,
                     mNonIntrusiveInCall.isChecked() ? 1 : 0);
             return true;
         } else if (preference == mCallEndSound){
-            Settings.System.putInt(getContentResolver(), Settings.System.CALL_END_SOUND,
+            Settings.PAC.putInt(getContentResolver(), Settings.PAC.CALL_END_SOUND,
                     mCallEndSound.isChecked() ? 1 : 0);
             return true;
         }
@@ -693,8 +693,8 @@ public class CallFeaturesSetting extends PreferenceActivity
             saveT9SearchInputLocale(preference, (String) objValue);
         }else if (preference == mFlipAction) {
             int index = mFlipAction.findIndexOfValue((String) objValue);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.FLIP_ACTION_KEY, index);
+            Settings.PAC.putInt(getContentResolver(),
+                    Settings.PAC.FLIP_ACTION_KEY, index);
             updateFlipActionSummary(index);
         }
         // always let the preference setting proceed.
@@ -1824,12 +1824,12 @@ public class CallFeaturesSetting extends PreferenceActivity
         restoreLookupProviders();
 
         mNonIntrusiveInCall = (CheckBoxPreference) findPreference(BUTTON_NON_INTRUSIVE_INCALL_KEY);
-        mNonIntrusiveInCall.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.NON_INTRUSIVE_INCALL, 1) == 0 ? false : true);
+        mNonIntrusiveInCall.setChecked(Settings.PAC.getInt(getContentResolver(),
+                Settings.PAC.NON_INTRUSIVE_INCALL, 1) == 0 ? false : true);
 
         mCallEndSound = (CheckBoxPreference) findPreference(BUTTON_CALL_END_SOUND_KEY);
-        mCallEndSound.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.CALL_END_SOUND, 1) == 0 ? false : true);
+        mCallEndSound.setChecked(Settings.PAC.getInt(getContentResolver(),
+                Settings.PAC.CALL_END_SOUND, 1) == 0 ? false : true);
 
 
         // create intent to bring up contact list
@@ -2040,8 +2040,8 @@ public class CallFeaturesSetting extends PreferenceActivity
         }
 
         if (mFlipAction != null) {
-            int flipAction = Settings.System.getInt(getContentResolver(),
-                    Settings.System.FLIP_ACTION_KEY, 2);
+            int flipAction = Settings.PAC.getInt(getContentResolver(),
+                    Settings.PAC.FLIP_ACTION_KEY, 2);
             mFlipAction.setValue(String.valueOf(flipAction));
             updateFlipActionSummary(flipAction);
         }

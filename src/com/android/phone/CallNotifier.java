@@ -1682,8 +1682,8 @@ public class CallNotifier extends Handler
 
                 if (okToPlayTone){
                     if (mToneId == TONE_CALL_ENDED &&
-                            Settings.System.getInt(mApplication.getContentResolver(),
-                                android.provider.Settings.System.CALL_END_SOUND, 1) == 0){
+                            Settings.PAC.getInt(mApplication.getContentResolver(),
+                                android.provider.Settings.PAC.CALL_END_SOUND, 1) == 0){
                          okToPlayTone = false;
                     }
                 }
