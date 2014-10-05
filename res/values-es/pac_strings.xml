@@ -16,10 +16,10 @@
   limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="battery_mode">Modo de ahorro de batería</string>
+  <string name="battery_mode_label">Cambiar a red 2G cuando el dispositivo esté bloqueado</string>
   <string name="call_end_sound_title">Tono de llamada</string>
   <string name="call_end_sound_summary">Reproduzca el tono de llamada</string>
-  <string name="non_intrusive_incall_title">No intrusivo</string>
-  <string name="non_intrusive_incall_summary">Diálogo no intrusivo para llamadas entrantes</string>
   <string name="flip_action_title">Acción al voltear</string>
   <string name="flip_action_dialog_title">Voltear dispositivo a\u2026</string>
   <string name="flip_action_summary">Al voltear el teléfono <xliff:g id="action">%s</xliff:g></string>
@@ -29,4 +29,6 @@
   <string name="summary_do_nothing">no hacer nada</string>
   <string name="summary_mute_ringer">silenciar el timbre</string>
   <string name="summary_dismiss_call">Rechazar la llamada</string>
+  <string name="non_intrusive_incall_title">No intrusivo</string>
+  <string name="non_intrusive_incall_summary">Diálogo no intrusivo para llamadas entrantes</string>
 </resources>
