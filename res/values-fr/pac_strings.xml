@@ -16,19 +16,19 @@
   limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="battery_mode">Battery saving mode</string>
-  <string name="battery_mode_label">Set network to 2G when device is locked</string>
-  <string name="call_end_sound_title">Call end tone</string>
-  <string name="call_end_sound_summary">Play tone on end call</string>
-  <string name="flip_action_title">Flip action</string>
-  <string name="flip_action_dialog_title">Flip device to\u2026</string>
-  <string name="flip_action_summary">Flipping the phone down will <xliff:g id="action">%s</xliff:g></string>
-  <string name="entry_do_nothing">Do nothing</string>
-  <string name="entry_mute_ringer">Mute ringer</string>
-  <string name="entry_dismiss_call">Dismiss call</string>
-  <string name="summary_do_nothing">do nothing</string>
-  <string name="summary_mute_ringer">mute the ringer</string>
-  <string name="summary_dismiss_call">dismiss the call</string>
-  <string name="non_intrusive_incall_title">Non intrusive</string>
-  <string name="non_intrusive_incall_summary">Use non intrusive dialog for incoming calls</string>
+  <string name="battery_mode">Mode économie d\'énergie</string>
+  <string name="battery_mode_label">Régler le réseau sur 2G quand l\'appareil est verrouillé</string>
+  <string name="call_end_sound_title">Tonalité de fin d\'appel</string>
+  <string name="call_end_sound_summary">Jouer un son sur fin d\'appel</string>
+  <string name="flip_action_title">Action de rotation</string>
+  <string name="flip_action_dialog_title">Retourner l\'appareil pour\u2026</string>
+  <string name="flip_action_summary">Retourner le téléphone écran vers le bas pour <xliff:g id="action">%s</xliff:g></string>
+  <string name="entry_do_nothing">Ne rien faire</string>
+  <string name="entry_mute_ringer">Sonnerie muette</string>
+  <string name="entry_dismiss_call">Rejeter l\'appel</string>
+  <string name="summary_do_nothing">ne rien faire</string>
+  <string name="summary_mute_ringer">couper la sonnerie</string>
+  <string name="summary_dismiss_call">rejeter l\'appel</string>
+  <string name="non_intrusive_incall_title">Non intrusif</string>
+  <string name="non_intrusive_incall_summary">Utilisez le dialogue non intrusif pour les appels entrants</string>
 </resources>
