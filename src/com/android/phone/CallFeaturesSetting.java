@@ -644,11 +644,11 @@ public class CallFeaturesSetting extends PreferenceActivity
                 // This should let the preference use default behavior in the xml.
                 return false;
             }
-        } else if (preference == mNonIntrusiveInCall){
+        } else if (preference == mNonIntrusiveInCall && mNonIntrusiveInCall != null){
             Settings.PAC.putInt(getContentResolver(), Settings.PAC.NON_INTRUSIVE_INCALL,
                     mNonIntrusiveInCall.isChecked() ? 1 : 0);
             return true;
-        } else if (preference == mCallEndSound){
+        } else if (preference == mCallEndSound && mCallEndSound != null){
             Settings.PAC.putInt(getContentResolver(), Settings.PAC.CALL_END_SOUND,
                     mCallEndSound.isChecked() ? 1 : 0);
             return true;
@@ -731,7 +731,7 @@ public class CallFeaturesSetting extends PreferenceActivity
             saveLookupProviderSetting(preference, (String) objValue);
         } else if (preference == mT9SearchInputLocale) {
             saveT9SearchInputLocale(preference, (String) objValue);
-        }else if (preference == mFlipAction) {
+        } else if (preference == mFlipAction && mFlipAction != null) {
             int index = mFlipAction.findIndexOfValue((String) objValue);
             Settings.PAC.putInt(getContentResolver(),
                     Settings.PAC.FLIP_ACTION_KEY, index);
@@ -1757,12 +1757,16 @@ public class CallFeaturesSetting extends PreferenceActivity
         onCreateLookupPrefs();
 
         mNonIntrusiveInCall = (CheckBoxPreference) findPreference(BUTTON_NON_INTRUSIVE_INCALL_KEY);
-        mNonIntrusiveInCall.setChecked(Settings.PAC.getInt(getContentResolver(),
-                Settings.PAC.NON_INTRUSIVE_INCALL, 1) == 0 ? false : true);
+        if (mNonIntrusiveInCall != null) {
+            mNonIntrusiveInCall.setChecked(Settings.PAC.getInt(getContentResolver(),
+                    Settings.PAC.NON_INTRUSIVE_INCALL, 1) == 0 ? false : true);
+        }
 
         mCallEndSound = (CheckBoxPreference) findPreference(BUTTON_CALL_END_SOUND_KEY);
-        mCallEndSound.setChecked(Settings.PAC.getInt(getContentResolver(),
-                Settings.PAC.CALL_END_SOUND, 1) == 0 ? false : true);
+        if (mCallEndSound != null) {
+            mCallEndSound.setChecked(Settings.PAC.getInt(getContentResolver(),
+                    Settings.PAC.CALL_END_SOUND, 1) == 0 ? false : true);
+        }
 
 
         // create intent to bring up contact list
