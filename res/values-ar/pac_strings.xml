@@ -15,4 +15,15 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"/>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="battery_mode">وضعية توفير طاقة البطارية</string>
+  <string name="battery_mode_label">ضبط الشبكة على 2G عند قفل الجهاز</string>
+  <string name="call_end_sound_title">نغمة نهاية المكالمة</string>
+  <string name="call_end_sound_summary">تشغيل نغمة عند إنهاء المكالمة</string>
+  <string name="entry_do_nothing">لا تفعل شيئا</string>
+  <string name="entry_mute_ringer">كتم صوت الرنين</string>
+  <string name="entry_dismiss_call">تجاهل المكالمة</string>
+  <string name="summary_do_nothing">لا تفعل شيئا</string>
+  <string name="summary_mute_ringer">كتم صوت الرنين</string>
+  <string name="summary_dismiss_call">تجاهل المكالمة</string>
+</resources>

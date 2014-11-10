@@ -15,4 +15,18 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2"/>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="call_end_sound_title">Gesprek beëindigd toon</string>
+  <string name="call_end_sound_summary">Speel een geluid af aan het einde van een gesprek</string>
+  <string name="flip_action_title">Omdraai-actie</string>
+  <string name="flip_action_dialog_title">Draai apparaat naar\u2026</string>
+  <string name="flip_action_summary">Het omdraaien van uw telefoon zal <xliff:g id="action">%s</xliff:g></string>
+  <string name="entry_do_nothing">Niets doen</string>
+  <string name="entry_mute_ringer">De beltoon dempen</string>
+  <string name="entry_dismiss_call">De oproep negeren</string>
+  <string name="summary_do_nothing">niets doen</string>
+  <string name="summary_mute_ringer">de beltoon dempen</string>
+  <string name="summary_dismiss_call">de oproep negeren</string>
+  <string name="non_intrusive_incall_title">Niet opdringerig</string>
+  <string name="non_intrusive_incall_summary">Gebruik een niet opdringerig dialoog voor inkomende gesprekken</string>
+</resources>
