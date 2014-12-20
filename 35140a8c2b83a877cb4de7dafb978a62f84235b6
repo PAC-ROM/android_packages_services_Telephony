@@ -17,6 +17,12 @@ Project: android_packages_services_Telephony
 Branch: refs/heads/pac-4.4
 
 Submitted-by: Lokesh Chamane <lokesh.c703@gmail.com>
+Submitted-at: Tue, 02 Sep 2014 19:03:31 -0500
+Reviewed-on: http://review.pac-rom.com/1434
+Project: android_packages_services_Telephony
+Branch: refs/heads/pac-4.4
+
+Submitted-by: Lokesh Chamane <lokesh.c703@gmail.com>
 Submitted-at: Tue, 02 Sep 2014 20:03:31 -0400
 Reviewed-on: http://review.pac-rom.com/1434
 Project: android_packages_services_Telephony

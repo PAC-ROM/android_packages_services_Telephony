@@ -17,6 +17,12 @@ Project: android_packages_services_Telephony
 Branch: refs/heads/pac-4.4
 
 Submitted-by: Björn Hutmacher <bjorn.hutmacher@gmail.com>
+Submitted-at: Mon, 27 Oct 2014 12:25:26 -0500
+Reviewed-on: http://review.pac-rom.com/2311
+Project: android_packages_services_Telephony
+Branch: refs/heads/pac-4.4
+
+Submitted-by: Björn Hutmacher <bjorn.hutmacher@gmail.com>
 Submitted-at: Mon, 27 Oct 2014 13:25:26 -0400
 Reviewed-on: http://review.pac-rom.com/2311
 Project: android_packages_services_Telephony
