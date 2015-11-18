@@ -99,8 +99,6 @@ abstract class TelephonyConnection extends Connection {
      */
     private static final Map<String, String> sExtrasMap = createExtrasMap();
 
-    private SuppServiceNotification mSsNotification = null;
-
     private final Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
